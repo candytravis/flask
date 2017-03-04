@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 
 # initialization
 app = Flask(__name__)
@@ -9,19 +9,8 @@ app.config.update(
 
 # controllers
 @app.route("/")
-def counter(min, max):
-	def count: for num in range(min, max):
-		return num
-
-
-	for x in range(0, 1000):
-		if x < 5:
-			print 'x = ', x
-			for y in range(0, 10000):
-				if y < 5:
-					print 'y = ', y
-
-					counter(x, y)
+def index():
+    return render_template('index.html')
 
 # launch
 if __name__ == "__main__":
