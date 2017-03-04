@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template
 
 # initialization
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static/')
 app.config.update(
     DEBUG = True,
 )
@@ -11,6 +11,7 @@ app.config.update(
 @app.route("/")
 def index():
     return render_template('index.html')
+    url_for('static', filename='css/style.css')
 
 # launch
 if __name__ == "__main__":
