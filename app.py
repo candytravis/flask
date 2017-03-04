@@ -9,8 +9,19 @@ app.config.update(
 
 # controllers
 @app.route("/")
-def hello():
-    return "Hello from Danny and Travis!" * 1000
+def counter(min, max):
+	def count: for num in range(min, max):
+		return num
+
+
+	for x in range(0, 1000):
+		if x < 5:
+			print 'x = ', x
+			for y in range(0, 10000):
+				if y < 5:
+					print 'y = ', y
+
+					counter(x, y)
 
 # launch
 if __name__ == "__main__":
