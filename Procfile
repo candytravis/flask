@@ -1,1 +1,1 @@
-source venv/bin/activate
+web: python app.py
