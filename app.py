@@ -14,8 +14,9 @@ def index():
 
 @app.route('/static/stylesheets/styles.css')
 def send_css(path):
-    return send_from_directory('css', path)
+    return send_from_directory('stylesheets', path)
 
+app.static_folder = 'static'
 
 # launch
 if __name__ == "__main__":
