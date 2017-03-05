@@ -12,7 +12,7 @@ app.config.update(
 def index():
     return render_template('index.html')
 
-@app.route('/static/stylesheets/styles.css')
+@app.route('/static/stylesheets/Style.css')
 def send_css(path):
     return send_from_directory('stylesheets', path)
 
