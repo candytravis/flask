@@ -1,8 +1,8 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 # initialization
-app = Flask(__name__, static_url_path='/static/')
+app = Flask(__name__)
 app.config.update(
     DEBUG = True,
 )
@@ -11,7 +11,11 @@ app.config.update(
 @app.route("/")
 def index():
     return render_template('index.html')
-    url_for('static', filename='css/style.css')
+
+@app.route('/static/css/styles.css')
+def send_css(path):
+    return send_from_directory('css', path)
+
 
 # launch
 if __name__ == "__main__":
