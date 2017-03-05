@@ -16,6 +16,7 @@ def index():
 def send_css(path):
     return send_from_directory('css', path)
 
+url_for('static', filename='style.css')
 
 # launch
 if __name__ == "__main__":
