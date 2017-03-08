@@ -2,6 +2,9 @@
   font-family: 'Georgia', 'Times', serif;
 }
 
+ul {
+	display: inline-block;
+}
 a {
   color: SeaGreen;
   text-decoration: none;
