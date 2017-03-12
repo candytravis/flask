@@ -1,0 +1,26 @@
+* {
+  font-family: 'Georgia', 'Times', serif;
+}
+
+ul {
+	display: inline-block;
+}
+a {
+  color: SeaGreen;
+  text-decoration: none;
+}
+
+img {
+  border-radius: 100%;
+}
+.center 
+{
+	    margin: auto;
+	    width:50%;
+	    border: 3px solid green;
+		padding: 10px;
+		}
+.centerText 
+{
+			text-align: center;
+		}

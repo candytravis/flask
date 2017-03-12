@@ -12,11 +12,11 @@ app.config.update(
 def index():
     return render_template('index.html')
 
-@app.route('/static/stylesheets/style.css')
+@app.route('css/styles.css')
 def send_css(path):
-    return send_from_directory('stylesheets', path)
+    return send_from_directory('css', path)
 
-app.static_folder = 'static'
+app.static_folder = 'css'
 
 # launch
 if __name__ == "__main__":
