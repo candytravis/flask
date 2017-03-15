@@ -15,7 +15,7 @@ img {
 }
 
 .jumbotron {
-  background: url(/images/studio_crc.jpg) no-repeat center center;
+  background: url(/static/images/studio_crc.jpg) no-repeat center center;
   background-size: cover;
   height: 800px;
 }
