@@ -18,7 +18,7 @@ img {
 {
 	    margin: auto;
 	    width:50%;
-	    border: 3px solid green;
+	    border: 10px white;
 		padding: 10px;
 		}
 .centerText 
@@ -26,5 +26,8 @@ img {
 			text-align: center;
 		}
 body {
-  background-image: url("/static/images/studio_crc.jpg");
+  background-image: url("/static/images/studio_crc.jpg") no-repeat center 
+  bottom;
+  display: block;
+  margin: auto;
 }
