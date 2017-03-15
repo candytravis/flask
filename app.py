@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, send_from_directory 
+from flask import Flask, render_template, send_from_directory, url_for
 
 # initialization
 app = Flask(__name__)
@@ -10,9 +10,9 @@ app.config.update(
 # controllers
 @app.route("/")
 def index():
-    return render_template('/index.html')
+    return render_template('index.html')
 
-@app.route('static/stylesheets/styles.css')
+@app.route('/static/stylesheets/styles.css')
 def send_css(path):
     return send_from_directory('static', path)
 
