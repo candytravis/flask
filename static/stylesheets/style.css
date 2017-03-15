@@ -14,11 +14,6 @@ img {
   border-radius: 100%;
 }
 
-.jumbotron {
-  background: url(/static/images/studio_crc.jpg) no-repeat center center;
-  background-size: cover;
-  height: 800px;
-}
 .center 
 {
 	    margin: auto;
@@ -30,3 +25,25 @@ img {
 {
 			text-align: center;
 		}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.jumbotron {
+  background: url(http://s3.amazonaws.com/codecademy-content/projects/broadway/bg.png) no-repeat center center;
+  background-size: cover;
+  height: 800px;
+}
+.main {
+  position: relative;
+  top: 180px;
+  text-align: center;
+}
