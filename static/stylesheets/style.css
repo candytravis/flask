@@ -6,7 +6,7 @@ ul {
 	display: inline-block;
 }
 a {
-  color: SeaGreen;
+  color: MidnightBlue;
   text-decoration: none;
 }
 
@@ -20,6 +20,7 @@ img {
 	    width:50%;
 	    border: 10px white;
 		padding: 10px;
+		color: White;
 		}
 .centerText 
 {
