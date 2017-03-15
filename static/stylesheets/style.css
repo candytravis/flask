@@ -31,3 +31,10 @@ body {
   display: block;
   margin: auto;
 }
+
+.band {
+	width: 304px;
+	height: 228px;
+	display: block;
+	margin: 0px auto;
+}
