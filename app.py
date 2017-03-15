@@ -1,6 +1,5 @@
 import os
 from flask import Flask, render_template, send_from_directory 
-from flask import app
 
 # initialization
 app = Flask(__name__)
@@ -17,7 +16,7 @@ def index():
 def send_css(path):
     return send_from_directory('static', path)
 
-app.static_folder = 'css'
+app.static_folder = 'static'
 
 # launch
 if __name__ == "__main__":
