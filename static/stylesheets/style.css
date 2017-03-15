@@ -33,8 +33,10 @@ body {
   margin: auto;
 }
 
-.band img {
+img.band {
 	width: 20%;
 	height: 20%;
 	display: block;
+	margin: 0px auto;
+    
 }
