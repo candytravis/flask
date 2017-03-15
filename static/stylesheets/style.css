@@ -15,7 +15,7 @@ img {
 }
 
 .jumbotron {
-  background: url(https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/15622001_10208865732465036_5903307896168646898_n.jpg?oh=79802d51191154215a7cdcb4ce2c319c&oe=592EA33B) no-repeat center center;
+  background: url(/images/studio_crc.jpg) no-repeat center center;
   background-size: cover;
   height: 800px;
 }
