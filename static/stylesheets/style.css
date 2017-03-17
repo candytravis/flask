@@ -27,9 +27,11 @@ img {
 			text-align: center;
 		}
 body {
-   background-color: #FFF;
-  margin: 0;
-  padding: 0;
+  background-image: url("http://more-sky.com/data/out/10/IMG_413491.jpg") no-repeat center 
+  bottom;
+  background-attachment: scroll;
+  display: block;
+  margin: auto;
 }
 
 img.band {
