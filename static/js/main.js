@@ -9,13 +9,13 @@ function main($image) {
 	$('.image').fadeIn(4000);
 }
 
-$(document).ready(function() {
+function main($navList) {
     $('navList').mouseenter(function() {
         $('navList').fadeTo('fast', 1);
     });
     $('navList').mouseleave(function() {
         $('navList').fadeTo('fast', 0.5);
     });
-});
+};
 
 $(document).ready(main);
