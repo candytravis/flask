@@ -10,11 +10,11 @@ function main($image) {
 }
 
 $(document).ready(function() {
-    $('navigation').mouseenter(function() {
-        $('navigation').fadeTo('fast', 1);
+    $('navList').mouseenter(function() {
+        $('navList').fadeTo('fast', 1);
     });
-    $('navigation').mouseleave(function() {
-        $('navigation').fadeTo('fast', 0.5);
+    $('navList').mouseleave(function() {
+        $('navList').fadeTo('fast', 0.5);
     });
 });
 
