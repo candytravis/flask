@@ -2,9 +2,6 @@
   font-family: 'Georgia', 'Times', serif;
 }
 
-ul {
-	display: inline-block;
-}
 a {
   color: MidnightBlue;
   text-decoration: none;
@@ -12,6 +9,10 @@ a {
 
 img {
   border-radius: 100%;
+}
+
+.navList li {
+  display: inline-block;
 }
 
 .center 
