@@ -13,6 +13,7 @@ img {
 
 .navList li {
   display: inline-block;
+  text-align: center;
 }
 
 .center 

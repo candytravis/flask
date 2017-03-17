@@ -1,3 +1,11 @@
+$(document).ready(function() {
+    $('.pull-me').click(function() {
+    $('.panel').slideToggle('slow');
+    });
+})
+
+
+
 function main($center) {
      $('.center').hide();
    $('.center').fadeIn(4000);
