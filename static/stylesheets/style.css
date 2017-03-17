@@ -18,9 +18,9 @@ img {
 {
 	    margin: auto;
 	    width:50%;
-	    border: 10px white;
+	    border: 10px Antiquewhite;
 		padding: 10px;
-		color: White;
+		color: AntiqueWhite;
 		}
 .centerText 
 {
@@ -30,8 +30,6 @@ body {
   background-image: url("http://more-sky.com/data/out/10/IMG_413491.jpg") no-repeat center 
   bottom;
   background-attachment: scroll;
-  display: block;
-  margin: auto;
 }
 
 img.band {
