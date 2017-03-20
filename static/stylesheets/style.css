@@ -22,7 +22,7 @@ img {
 	    width:50%;
 	    border: 10px Black;
 		padding: 10px;
-		color: AntiqueWhite;
+		color: White;
 		}
 .centerText 
 {
@@ -31,7 +31,6 @@ img {
 body {
   background: url("http://more-sky.com/data/out/10/IMG_413491.jpg") no-repeat center 
   bottom;
-  background-attachment: scroll;
   display: block;
   margin: auto;
 }
