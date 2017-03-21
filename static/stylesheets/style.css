@@ -30,7 +30,8 @@ img {
 			color: green;
 		}
 body {
-  background-image: url("http://more-sky.com/data/out/10/IMG_413491.jpg");
+  /*background-image: url("http://more-sky.com/data/out/10/IMG_413491.jpg");*/
+  background-color: #333;
   display: block;
   margin: auto;
 }
