@@ -20,17 +20,17 @@ img {
 {
 	    margin: auto;
 	    width:50%;
-	    border: 10px Black;
+	    border: 10px white;
 		padding: 10px;
-		color: White;
+		color: white;
 		}
 .centerText 
 {
 			text-align: center;
+			color: black;
 		}
 body {
-  background: url("http://more-sky.com/data/out/10/IMG_413491.jpg") no-repeat center 
-  bottom;
+  background-image: url("http://more-sky.com/data/out/10/IMG_413491.jpg");
   display: block;
   margin: auto;
 }
