@@ -3,10 +3,13 @@
 }
 
 a {
-  color: AntiqueWhite;
+  color: MidnightBlue;
   text-decoration: none;
 }
 
+img {
+  border-radius: 100%;
+}
 
 .navList li {
   display: inline;
@@ -17,23 +20,19 @@ a {
 {
 	    margin: auto;
 	    width:50%;
-	    border: 10px white;
-	    border-radius: 100%;
+	    border: 10px Black;
 		padding: 10px;
-		color: white;
+		color: White;
 		}
 .centerText 
 {
 			text-align: center;
-			color: green;
 		}
-body {background:
-radial-gradient(black 15%, transparent 16%) 0 0,
-radial-gradient(black 15%, transparent 16%) 8px 8px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-background-color:#282828;
-background-size:16px 16px;
+body {
+  background: url("http://more-sky.com/data/out/10/IMG_413491.jpg") no-repeat center 
+  bottom;
+  display: block;
+  margin: auto;
 }
 
 img.band {
