@@ -1,8 +1,4 @@
-/*!
- * Start Bootstrap - Freelancer v3.3.7+1 (http://startbootstrap.com/template-overviews/freelancer)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
+
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
@@ -470,9 +466,9 @@ fieldset[disabled] .btn-success.active {
   background-color: #2C3E50;
   transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  /* IE 9 */
+
   -webkit-transform: rotate(45deg);
-  /* Safari and Chrome */
+  
   z-index: 1051;
 }
 .portfolio-modal .close-modal .lr .rl {
@@ -481,9 +477,9 @@ fieldset[disabled] .btn-success.active {
   background-color: #2C3E50;
   transform: rotate(90deg);
   -ms-transform: rotate(90deg);
-  /* IE 9 */
+ 
   -webkit-transform: rotate(90deg);
-  /* Safari and Chrome */
+  
   z-index: 1052;
 }
 .portfolio-modal .modal-backdrop {
