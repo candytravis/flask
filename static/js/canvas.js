@@ -2,7 +2,7 @@ var context;
 // Check for the canvas tag onload. 
    if(window.addEventListener) { 
  window.addEventListener('load', function () {
-    var canvas, canvaso, contexto; 
+ 	var canvas, canvaso, contexto; 
  // Default tool. (chalk, line, rectangle) 
    var tool; 
    var tool_default = 'chalk'; 
