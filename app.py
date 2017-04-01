@@ -20,13 +20,9 @@ def portrait():
 def send_css(path):
     return send_from_directory('static', path)
 
-@app.route('/source/css/styles.css')
-def send_css(path):
-    return send_from_directory('source', path)
 
 
 app.static_folder = 'static'
-app.source_folder = 'source'
 
 # launch
 if __name__ == "__main__":
