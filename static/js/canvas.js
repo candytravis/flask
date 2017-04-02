@@ -4,9 +4,9 @@
  
  var context;
  var colorPalette = [ //Begin array of color table hex color codes.
-					 
+           
 "#000000","#000000","#000000","#000000","#003300","#006600","#009900","#00CC00","#00FF00","#330000","#333300","#336600","#339900","#33CC00","#33FF00","#660000","#663300","#666600","#669900","#66CC00","#66FF00",
-					 
+           
 "#000000","#333333","#000000","#000033","#003333","#006633","#009933","#00CC33","#00FF33","#330033","#333333","#336633","#339933","#33CC33","#33FF33","#660033","#663333","#666633","#669933","#66CC33","#66FF33",
 
 "#000000","#666666","#000000","#000066","#003366","#006666","#009966","#00CC66","#00FF66","#330066","#333366","#336666","#339966","#33CC66","#33FF66","#660066","#663366","#666666","#669966","#66CC66","#66FF66",
@@ -47,6 +47,11 @@ window.addEventListener('load', function () {
   function init () {
 
     canvaso = document.getElementById('drawingCanvas');
+    if (!canvaso) {
+      alert('Error! The canvas element was not found!');
+      return;
+    }
+
     if (!canvaso.getContext) {
       alert('Error! No canvas.getContext!');
       return;
@@ -73,12 +78,12 @@ window.addEventListener('load', function () {
     container.appendChild(canvas);
 
     context = canvas.getContext('2d');
-	context.strokeStyle = "#FFFFFF";// Default line color.
-	context.lineWidth = 1.0;// Default stroke weight.
-	
-	// Fill transparent canvas with dark grey (So we can use the color to erase).
-	context.fillStyle = "#424242";
-	context.fillRect(0,0,897,532);//Top, Left, Width, Height of canvas.
+  context.strokeStyle = "#FFFFFF";// Default line color.
+  context.lineWidth = 1.0;// Default stroke weight.
+  
+  // Fill transparent canvas with dark grey (So we can use the color to erase).
+  context.fillStyle = "#424242";
+  context.fillRect(0,0,897,532);//Top, Left, Width, Height of canvas.
 
     // Create a select field with our tools.
     var tool_select = document.getElementById('selector');
@@ -87,8 +92,8 @@ window.addEventListener('load', function () {
       return;
     }
     tool_select.addEventListener('change', ev_tool_change, false);
-	
-	
+  
+  
     // Activate the default tool (chalk).
     if (tools[tool_default]) {
       tool = new tools[tool_default]();
@@ -125,8 +130,8 @@ window.addEventListener('load', function () {
 
 // Create the temporary canvas on top of the canvas, which is cleared each time the user draws.
   function img_update () {
-		contexto.drawImage(canvas, 0, 0);
-		context.clearRect(0, 0, canvas.width, canvas.height);
+    contexto.drawImage(canvas, 0, 0);
+    context.clearRect(0, 0, canvas.width, canvas.height);
   }
   var tools = {};
 
@@ -169,7 +174,7 @@ window.addEventListener('load', function () {
       if (!tool.started) {
         return;
       }
-	  // This creates a rectangle on the canvas.
+    // This creates a rectangle on the canvas.
       var x = Math.min(ev._x,  tool.x0),
           y = Math.min(ev._y,  tool.y0),
           w = Math.abs(ev._x - tool.x0),
@@ -181,7 +186,7 @@ window.addEventListener('load', function () {
       }
       context.strokeRect(x, y, w, h);
     };
-	// Now when you select the rectangle tool, you can draw rectangles.
+  // Now when you select the rectangle tool, you can draw rectangles.
     this.mouseup = function (ev) {
       if (tool.started) {
         tool.mousemove(ev);
@@ -205,14 +210,14 @@ window.addEventListener('load', function () {
         return;
       }
       context.clearRect(0, 0, canvas.width, canvas.height);
-	  // Begin the line.
+    // Begin the line.
       context.beginPath();
       context.moveTo(tool.x0, tool.y0);
       context.lineTo(ev._x,   ev._y);
       context.stroke();
       context.closePath();
     };
-	// Now you can draw lines when the line tool is seletcted.
+  // Now you can draw lines when the line tool is seletcted.
     this.mouseup = function (ev) {
       if (tool.started) {
         tool.mousemove(ev);
@@ -228,98 +233,98 @@ window.addEventListener('load', function () {
 
 window.onload = function() {
 
-	var bMouseIsDown = false;
-	
-	var oCanvas = document.getElementById("drawingCanvas");
-	var oCtx = oCanvas.getContext("2d");
+  var bMouseIsDown = false;
+  
+  var oCanvas = document.getElementById("drawingCanvas");
+  var oCtx = oCanvas.getContext("2d");
 
-	var iWidth = oCanvas.width;
-	var iHeight = oCanvas.height;
+  var iWidth = oCanvas.width;
+  var iHeight = oCanvas.height;
 
-	function showDownloadText() {
-		document.getElementById("textdownload").style.display = "block";
-	}
+  function showDownloadText() {
+    document.getElementById("textdownload").style.display = "block";
+  }
 
-	function hideDownloadText() {
-		document.getElementById("textdownload").style.display = "none";
-	}
+  function hideDownloadText() {
+    document.getElementById("textdownload").style.display = "none";
+  }
 
-	function convertCanvas(strType) {
-		if (strType == "PNG")
-			var oImg = Canvas2Image.saveAsPNG(oCanvas, true);
-		if (strType == "BMP")
-			var oImg = Canvas2Image.saveAsBMP(oCanvas, true);
-		if (strType == "JPEG")
-			var oImg = Canvas2Image.saveAsJPEG(oCanvas, true);
+  function convertCanvas(strType) {
+    if (strType == "PNG")
+      var oImg = Canvas2Image.saveAsPNG(oCanvas, true);
+    if (strType == "BMP")
+      var oImg = Canvas2Image.saveAsBMP(oCanvas, true);
+    if (strType == "JPEG")
+      var oImg = Canvas2Image.saveAsJPEG(oCanvas, true);
 
-		if (!oImg) {
-			alert("Sorry, this browser is not capable of saving." + strType + " files!");
-			return false;
-		}
+    if (!oImg) {
+      alert("Sorry, this browser is not capable of saving." + strType + " files!");
+      return false;
+    }
 
-		oImg.id = "canvasimage";
+    oImg.id = "canvasimage";
 
-		oImg.style.border = oCanvas.style.border;
-		oCanvas.parentNode.replaceChild(oImg, oCanvas);
+    oImg.style.border = oCanvas.style.border;
+    oCanvas.parentNode.replaceChild(oImg, oCanvas);
 
-		showDownloadText();
-	}
+    showDownloadText();
+  }
 
-	function saveCanvas(pCanvas, strType) {
-		var bRes = false;
-		if (strType == "PNG")
-			bRes = Canvas2Image.saveAsPNG(oCanvas);
-		if (strType == "BMP")
-			bRes = Canvas2Image.saveAsBMP(oCanvas);
-		if (strType == "JPEG")
-			bRes = Canvas2Image.saveAsJPEG(oCanvas);
+  function saveCanvas(pCanvas, strType) {
+    var bRes = false;
+    if (strType == "PNG")
+      bRes = Canvas2Image.saveAsPNG(oCanvas);
+    if (strType == "BMP")
+      bRes = Canvas2Image.saveAsBMP(oCanvas);
+    if (strType == "JPEG")
+      bRes = Canvas2Image.saveAsJPEG(oCanvas);
 
-		if (!bRes) {
-			alert("Sorry, this browser is not capable of saving " + strType + " files!");
-			return false;
-		}
-	}
+    if (!bRes) {
+      alert("Sorry, this browser is not capable of saving " + strType + " files!");
+      return false;
+    }
+  }
 
-	document.getElementById("convertpngbtn").onclick = function() {
-		convertCanvas("PNG");
-	}
+  document.getElementById("convertpngbtn").onclick = function() {
+    convertCanvas("PNG");
+  }
 
-	document.getElementById("resetbtn").onclick = function() {
-		var oImg = document.getElementById("canvasimage");
-		oImg.parentNode.replaceChild(oCanvas, oImg);
+  document.getElementById("resetbtn").onclick = function() {
+    var oImg = document.getElementById("canvasimage");
+    oImg.parentNode.replaceChild(oCanvas, oImg);
 
-		hideDownloadText();
-	}
+    hideDownloadText();
+  }
 
 }
 
 $(document).ready(function() {
 
-	// Handles showing/hiding the color table
-	$("#colorTable").hide();
-	
-	$("#color").click(function() {
-		$("#colorTable").show();
-	});
-	$(document).click(function() {
-		$("#colorTable").hide();
-	});
-	$("#color").click(function(event) {
-		event.stopPropagation();
-	});
+  // Handles showing/hiding the color table
+  $("#colorTable").hide();
+  
+  $("#color").click(function() {
+    $("#colorTable").show();
+  });
+  $(document).click(function() {
+    $("#colorTable").hide();
+  });
+  $("#color").click(function(event) {
+    event.stopPropagation();
+  });
 });
 
 function LoadColorTable() { // Populate the color picker table with colors specified in the 'colorPalette' array
-	for (i = 0; i < colorPalette.length; i++) {
-		var colorDiv = document.createElement("div");
-		colorDiv.className = "color";
-		colorDiv.id = "colorSwatch" + i;
-		colorDiv.style.backgroundColor = colorPalette[i];
-		colorDiv.setAttribute("onclick", "SetColor(id);");
-		document.getElementById("colorTable").appendChild(colorDiv);
-	};
+  for (i = 0; i < colorPalette.length; i++) {
+    var colorDiv = document.createElement("div");
+    colorDiv.className = "color";
+    colorDiv.id = "colorSwatch" + i;
+    colorDiv.style.backgroundColor = colorPalette[i];
+    colorDiv.setAttribute("onclick", "SetColor(id);");
+    document.getElementById("colorTable").appendChild(colorDiv);
+  };
 }
 
 function SetColor(id) { // Set the color of the drawing tool when a color swatch is clicked
-	context.strokeStyle = document.getElementById(id).style.backgroundColor;
+  context.strokeStyle = document.getElementById(id).style.backgroundColor;
 }
