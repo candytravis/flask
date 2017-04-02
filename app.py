@@ -12,7 +12,7 @@ app.config.update(
 def index():
     return render_template('index.html')
 
-@app.route('/')
+@app.route("/")
 def render_static(page_name):
     return render_template('%s.html' % page_name)
 
