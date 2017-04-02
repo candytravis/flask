@@ -46,6 +46,7 @@ window.addEventListener('load', function () {
 
   function init () {
 
+    canvaso = document.getElementById('drawingCanvas');
     if (!canvaso.getContext) {
       alert('Error! No canvas.getContext!');
       return;
