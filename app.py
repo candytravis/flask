@@ -17,7 +17,7 @@ def render_static(page_name):
     return render_template('%s.html' % page_name)
 
 
-@app.route('/static/css/style.css')
+@app.route('/static/')
 def send_css():
     return send_from_directory('static', path)
 
