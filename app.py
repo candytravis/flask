@@ -16,6 +16,10 @@ def index():
 def render_static(page_name):
     return render_template('%s.html' % page_name)
 
+@app.route('/<string:page_name>/')
+def render_static(page_name):
+    return render_template('%s.css' % page_name)
+
 
 @app.route('/static/stylesheets/style.css')
 def send_css(path):
