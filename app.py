@@ -12,9 +12,10 @@ app.config.update(
 def index():
     return render_template('index.html')
 
-@app.route("/")
-def portrait():
-    return render_template('portrait.html')
+@app.route('/<string:page_name>/')
+def render_static(page_name):
+    return render_template('%s.html' % page_name)
+
 
 @app.route('/static/stylesheets/styles.css')
 def send_css(path):
