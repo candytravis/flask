@@ -4968,6 +4968,7 @@ a.badge:focus {
 }
 .jumboson {
   font-color: black;
+  background-color: #fff;
 }
 .jumbotron p {
   margin-bottom: 15px;
