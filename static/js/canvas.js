@@ -104,9 +104,43 @@ window.addEventListener('load', function () {
     canvas.addEventListener('mousedown', ev_canvas, false);
     canvas.addEventListener('mousemove', ev_canvas, false);
     canvas.addEventListener('mouseup',   ev_canvas, false);
+    canvas.addEventListener('touchstart', ev_canvas_touchStart, false);
+    canvas.addEventListener('touchmove', ev_canvas_touchMove, false);
   }
 
   // Get the mouse position.
+  var touchX,touchY;
+
+  function ev_canvas_touchStart() {
+        getTouchPos();
+        drawDot(ctx,touchX,touchY,12);
+
+        // Prevents an additional mousedown event being triggered
+        event.preventDefault();
+    }
+
+    function ev_canvas_touchMove(e) { 
+        // Update the touch co-ordinates
+        getTouchPos(e);
+
+        drawDot(ctx,touchX,touchY,12);
+
+        event.preventDefault();
+    }
+    function getTouchPos(e) {
+        if (!e)
+            var e = event;
+
+        if (e.touches) {
+            if (e.touches.length == 1) { // Only deal with one finger
+                var touch = e.touches[0]; // Get the information for finger #1
+                touchX=touch.pageX-touch.target.offsetLeft;
+                touchY=touch.pageY-touch.target.offsetTop;
+            }
+        }
+    }
+
+
   function ev_canvas (ev) {
     if (ev.layerX || ev.layerX == 0) { // Firefox
       ev._x = ev.layerX;
@@ -226,6 +260,7 @@ window.addEventListener('load', function () {
       }
     };
   };
+
 
   init();
 
